@@ -1,5 +1,5 @@
 <?php
-require_once '../Logica/LFamilias.php';
+require_once '../Logica/LFamilia.php';
 require_once '../Entidades/Familia.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
