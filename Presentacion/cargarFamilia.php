@@ -30,12 +30,12 @@
                     <td><?= $familia->getNombres() ?></td>
                     <td><?= $familia->getDescripcion() ?></td>
                     <td>
-                        <form method="GET" action="modificarfamilia.php" style="display:inline;">
+                        <form method="GET" action="modificarFamilia.php" style="display:inline;">
                             <input type="hidden" name="idfamilia" value="<?= $familia->getIdfamilia() ?>">
                             <button type="submit">Modificar</button>
                         </form>
 
-                        <form method="POST" action="eliminarfamilia.php" onsubmit="return confirm('¿Estás seguro de borrar?');" style="display:inline;">
+                        <form method="POST" action="eliminarFamilia.php" onsubmit="return confirm('¿Estás seguro de borrar?');" style="display:inline;">
                             <input type="hidden" name="idfamilia" value="<?= $familia->getIdfamilia() ?>">
                             <button type="submit">Borrar</button>
                         </form>
