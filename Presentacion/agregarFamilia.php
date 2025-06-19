@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
     $log = new LFamilia();
     $log->guardar($familia);
 
-    echo "<script>alert('Familia agregada correctamente'); window.location.href='CargarFamilia.php';</script>";
+    echo "<script>alert('Familia agregada correctamente'); window.location.href='cargarFamilia.php';</script>";
 }
 ?>
 
