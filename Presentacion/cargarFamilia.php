@@ -21,7 +21,7 @@
             </thead>
             <tbody>
                 <?php
-                require '../Logica/LFamilias.php';
+                require '../Logica/LFamilia.php';
                 $log = new LFamilia();
                 foreach ($log->cargar() as $familia) {
                 ?>
