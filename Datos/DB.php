@@ -1,7 +1,7 @@
 <?php
     class DB{
         public static function conectar(){
-            $url = "pgsql:host=localhost;dbname=familiaDB";
+            $url = "pgsql:host=10.0.221.105;dbname=familiaDB";
             $user = "postgres";
             $password = "123";
 
