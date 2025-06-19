@@ -1,8 +1,7 @@
 <?php 
-require_once __DIR__ . '/../Datos/DB.php';
-require_once __DIR__ . '/../Entidades/Familia.php';
-require_once __DIR__ . '/../Interfaces/IFamilia.php';
-
+require_once '../Datos/DB.php';
+require_once '../Entidades/Familia.php';
+require_once '../Interfaces/IFamilias.php';
 
 class LFamilia implements IFamilias {
     private $conexion;
@@ -21,7 +20,19 @@ class LFamilia implements IFamilias {
 
     public function cargar(): array {
         $stmt = $this->conexion->query("SELECT * FROM familias");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $familias = [];
+
+        foreach ($filas as $fila) {
+            $familia = new Familia(
+                $fila['idfamilia'],
+                $fila['nombres'],
+                $fila['descripcion']
+            );
+            $familias[] = $familia;
+        }
+
+        return $familias;
     }
 
     public function actualizar(Familia $familia) {
@@ -38,4 +49,4 @@ class LFamilia implements IFamilias {
         $stmt->execute([$familia->getIdfamilia()]);
     }
 }
-
+?>
